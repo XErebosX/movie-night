@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Movie {
+public class Genre {
 
-    private Long id;
-    private String overview;
-    private String title;
+  private int id;
+
+  private String name;
 }

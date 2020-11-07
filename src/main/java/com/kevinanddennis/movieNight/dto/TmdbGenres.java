@@ -3,11 +3,11 @@ package com.kevinanddennis.movieNight.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
-public class Movie {
+public class TmdbGenres {
 
-    private Long id;
-    private String overview;
-    private String title;
+  private List<Genre> genres;
 }
