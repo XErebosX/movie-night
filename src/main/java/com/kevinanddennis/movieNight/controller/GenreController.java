@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @AllArgsConstructor
 public class GenreController {
 
-    private GenreService genreService;
+    private final GenreService genreService;
 
     @GetMapping("/genres")
-    public String getGenres(Model model){
+    public String getGenres(Model model) {
         model.addAttribute("genres", genreService.getGenres());
         return "genres";
     }

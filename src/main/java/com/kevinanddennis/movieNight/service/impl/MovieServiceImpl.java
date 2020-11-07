@@ -14,13 +14,13 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class MovieServiceImpl implements MovieService {
 
-  private TmdbConnection tmdbConnection;
-  private MovieAssembler movieAssembler;
+    private final TmdbConnection tmdbConnection;
+    private final MovieAssembler movieAssembler;
 
-  @Override
-  public List<Movie> getMovies() {
-    return tmdbConnection.getTopRatedMovies().getResults().stream()
-        .map(movieAssembler::assembleMovieFromTmdbMovie)
-        .collect(Collectors.toList());
-  }
+    @Override
+    public List<Movie> getMovies() {
+        return tmdbConnection.getTopRatedMovies().getResults().stream()
+                .map(movieAssembler::assembleMovieFromTmdbMovie)
+                .collect(Collectors.toList());
+    }
 }

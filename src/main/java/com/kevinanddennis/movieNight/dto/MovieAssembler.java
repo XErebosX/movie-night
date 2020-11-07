@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class MovieAssembler {
 
-  public Movie assembleMovieFromTmdbMovie(TmdbMovie tmdbMovie) {
-    return Movie.builder()
-        .id(tmdbMovie.getId())
-        .title(tmdbMovie.getTitle())
-        .overview(tmdbMovie.getOverview())
-        .build();
-  }
+    public Movie assembleMovieFromTmdbMovie(TmdbMovie tmdbMovie) {
+        return Movie.builder()
+                .id(tmdbMovie.getId())
+                .title(tmdbMovie.getTitle())
+                .overview(tmdbMovie.getOverview())
+                .build();
+    }
 }

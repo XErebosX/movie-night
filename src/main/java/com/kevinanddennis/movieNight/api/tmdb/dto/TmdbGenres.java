@@ -9,5 +9,5 @@ import java.util.List;
 @Setter
 public class TmdbGenres {
 
-  private List<TmdbGenre> genres;
+    private List<TmdbGenre> genres;
 }

@@ -14,13 +14,13 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class GenreServiceImpl implements GenreService {
 
-  private TmdbConnection tmdbConnection;
-  private GenreAssembler genreAssembler;
+    private final TmdbConnection tmdbConnection;
+    private final GenreAssembler genreAssembler;
 
-  @Override
-  public List<Genre> getGenres() {
-    return tmdbConnection.getGenres().getGenres().stream()
-        .map(genreAssembler::assembleGenreFromTmdbGenre)
-        .collect(Collectors.toList());
-  }
+    @Override
+    public List<Genre> getGenres() {
+        return tmdbConnection.getGenres().getGenres().stream()
+                .map(genreAssembler::assembleGenreFromTmdbGenre)
+                .collect(Collectors.toList());
+    }
 }

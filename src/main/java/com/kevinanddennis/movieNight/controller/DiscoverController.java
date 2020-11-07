@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 @AllArgsConstructor
 public class DiscoverController {
 
-  private DiscoverService discoverService;
+    private final DiscoverService discoverService;
 
-  @GetMapping("/discover/{genreId}")
-  public String getMovies(Model model, @PathVariable String genreId) {
-    model.addAttribute("movies", discoverService.getMoviesByGenreId(genreId));
-    return "movies";
-  }
+    @GetMapping("/discover/{genreId}")
+    public String getMovies(Model model, @PathVariable String genreId) {
+        model.addAttribute("movies", discoverService.getMoviesByGenreId(genreId));
+        return "movies";
+    }
 }

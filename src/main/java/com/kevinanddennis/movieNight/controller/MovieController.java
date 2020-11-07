@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @AllArgsConstructor
 public class MovieController {
 
-    private MovieService movieService;
+    private final MovieService movieService;
 
     @GetMapping("/movies")
-    public String getMovies(Model model){
+    public String getMovies(Model model) {
         model.addAttribute("movies", movieService.getMovies());
         return "movies";
     }

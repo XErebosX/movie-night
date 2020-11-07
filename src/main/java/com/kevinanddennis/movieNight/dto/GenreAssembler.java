@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GenreAssembler {
 
-  public Genre assembleGenreFromTmdbGenre(TmdbGenre tmdbGenre) {
-    return Genre.builder().id(tmdbGenre.getId()).name(tmdbGenre.getName()).build();
-  }
+    public Genre assembleGenreFromTmdbGenre(TmdbGenre tmdbGenre) {
+        return Genre.builder().id(tmdbGenre.getId()).name(tmdbGenre.getName()).build();
+    }
 }

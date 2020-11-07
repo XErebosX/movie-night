@@ -9,6 +9,6 @@ import lombok.Setter;
 @Builder
 public class Genre {
 
-  private int id;
-  private String name;
+    private int id;
+    private String name;
 }

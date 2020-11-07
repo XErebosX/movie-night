@@ -14,13 +14,13 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class DiscoverServiceImpl implements DiscoverService {
 
-  private TmdbConnection tmdbConnection;
-  private MovieAssembler movieAssembler;
+    private final TmdbConnection tmdbConnection;
+    private final MovieAssembler movieAssembler;
 
-  @Override
-  public List<Movie> getMoviesByGenreId(String genreId) {
-    return tmdbConnection.discoverMoviesByGenreId(genreId).getResults().stream()
-        .map(movieAssembler::assembleMovieFromTmdbMovie)
-        .collect(Collectors.toList());
-  }
+    @Override
+    public List<Movie> getMoviesByGenreId(String genreId) {
+        return tmdbConnection.discoverMoviesByGenreId(genreId).getResults().stream()
+                .map(movieAssembler::assembleMovieFromTmdbMovie)
+                .collect(Collectors.toList());
+    }
 }

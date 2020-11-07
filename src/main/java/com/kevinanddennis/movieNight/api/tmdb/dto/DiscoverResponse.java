@@ -9,6 +9,6 @@ import java.util.List;
 @Setter
 public class DiscoverResponse {
 
-  private int page;
-  private List<TmdbMovie> results;
+    private int page;
+    private List<TmdbMovie> results;
 }
