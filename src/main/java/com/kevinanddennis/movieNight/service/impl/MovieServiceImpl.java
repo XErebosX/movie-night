@@ -19,7 +19,7 @@ public class MovieServiceImpl implements MovieService {
 
   @Override
   public List<Movie> getMovies() {
-    return tmdbConnection.getMovies().stream()
+    return tmdbConnection.getTopRatedMovies().getResults().stream()
         .map(movieAssembler::assembleMovieFromTmdbMovie)
         .collect(Collectors.toList());
   }

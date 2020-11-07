@@ -1,6 +1,7 @@
 package com.kevinanddennis.movieNight.api.tmdb;
 
 import com.kevinanddennis.movieNight.api.tmdb.dto.TmdbMovie;
+import com.kevinanddennis.movieNight.api.tmdb.dto.TopRatedResponse;
 import com.kevinanddennis.movieNight.config.MovieNightProperties;
 import com.kevinanddennis.movieNight.api.tmdb.dto.DiscoverResponse;
 import com.kevinanddennis.movieNight.api.tmdb.dto.TmdbGenres;
@@ -26,11 +27,11 @@ public class TmdbConnection {
 
   private final MovieNightProperties movieNightProperties;
 
-  public List<TmdbMovie> getMovies() {
-    String url = "";
+  public TopRatedResponse getTopRatedMovies() {
+    String url = movieNightProperties.getTmdbBaseUrl() + "/movie/top_rated";
 
     return restTemplate
-        .exchange(url, GET, createHeader(), new ParameterizedTypeReference<List<TmdbMovie>>() {})
+        .exchange(url, GET, createHeader(), TopRatedResponse.class)
         .getBody();
   }
 
