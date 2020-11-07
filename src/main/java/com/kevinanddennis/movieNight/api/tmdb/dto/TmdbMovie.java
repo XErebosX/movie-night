@@ -1,15 +1,14 @@
-package com.kevinanddennis.movieNight.dto;
+package com.kevinanddennis.movieNight.api.tmdb.dto;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Builder
-public class Movie {
+public class TmdbMovie {
 
     private Long id;
     private String overview;
     private String title;
+
 }

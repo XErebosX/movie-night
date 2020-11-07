@@ -1,10 +1,9 @@
-package com.kevinanddennis.movieNight.api.impl;
+package com.kevinanddennis.movieNight.api.tmdb;
 
-import com.kevinanddennis.movieNight.api.ApiConnection;
+import com.kevinanddennis.movieNight.api.tmdb.dto.TmdbMovie;
 import com.kevinanddennis.movieNight.config.MovieNightProperties;
-import com.kevinanddennis.movieNight.dto.DiscoverResponse;
-import com.kevinanddennis.movieNight.dto.Movie;
-import com.kevinanddennis.movieNight.dto.TmdbGenres;
+import com.kevinanddennis.movieNight.api.tmdb.dto.DiscoverResponse;
+import com.kevinanddennis.movieNight.api.tmdb.dto.TmdbGenres;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -16,23 +15,22 @@ import java.util.List;
 import static org.springframework.http.HttpMethod.*;
 
 @Component
-public class TmdbConnectionImpl implements ApiConnection {
+public class TmdbConnection {
 
   private final RestTemplate restTemplate;
 
-  public TmdbConnectionImpl(MovieNightProperties movieNightProperties) {
+  public TmdbConnection(MovieNightProperties movieNightProperties) {
     this.restTemplate = new RestTemplate();
     this.movieNightProperties = movieNightProperties;
   }
 
   private final MovieNightProperties movieNightProperties;
 
-  @Override
-  public List<Movie> getMovies() {
+  public List<TmdbMovie> getMovies() {
     String url = "";
 
     return restTemplate
-        .exchange(url, GET, createHeader(), new ParameterizedTypeReference<List<Movie>>() {})
+        .exchange(url, GET, createHeader(), new ParameterizedTypeReference<List<TmdbMovie>>() {})
         .getBody();
   }
 

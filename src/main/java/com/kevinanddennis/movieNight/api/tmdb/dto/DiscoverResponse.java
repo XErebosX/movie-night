@@ -1,4 +1,4 @@
-package com.kevinanddennis.movieNight.dto;
+package com.kevinanddennis.movieNight.api.tmdb.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +9,6 @@ import java.util.List;
 @Setter
 public class DiscoverResponse {
 
-    private int page;
-    private List<Movie> results;
+  private int page;
+  private List<TmdbMovie> results;
 }

@@ -1,4 +1,4 @@
-package com.kevinanddennis.movieNight.dto;
+package com.kevinanddennis.movieNight.api.tmdb.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,5 +9,5 @@ import java.util.List;
 @Setter
 public class TmdbGenres {
 
-  private List<Genre> genres;
+  private List<TmdbGenre> genres;
 }
